@@ -2,7 +2,7 @@ $("#button_1").on("click", function(e) {
     e.preventDefault();
     $.ajax({url: "/start_parsing"});
     var intervalId = null;
-    var varName = function(){
+    var getNewInfo = function(){
     $.ajax({
         type: 'GET',
         url: '/get_new_info/',
@@ -29,6 +29,6 @@ $("#button_1").on("click", function(e) {
     });
     };
     $(document).ready(function(){
-         intervalId = setInterval(varName, 2000);
+         intervalId = setInterval(getNewInfo, 2000);
     });
 });
